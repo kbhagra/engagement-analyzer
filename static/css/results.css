@@ -1,0 +1,340 @@
+/* CampaignLens — results dashboard styles (Khushi).
+   Palette is anchored to the Matplotlib charts so UI and charts feel
+   like one system:
+   ink      #10303c   deep teal-ink (headings, topbar)
+   accent   #1f6f8b   chart teal (links, tags, focus)
+   ember    #e07a5f   chart ember (highlight stat)
+   paper    #f7f9f9   page background
+   line     #dde6e8   hairlines
+*/
+
+:root {
+    --ink: #10303c;
+    --accent: #1f6f8b;
+    --ember: #e07a5f;
+    --paper: #f7f9f9;
+    --card: #ffffff;
+    --line: #dde6e8;
+    --muted: #5c7078;
+    --font-display: "Archivo", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-data: "IBM Plex Mono", monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+}
+
+a {
+    color: var(--accent);
+}
+
+/* ---------- top bar ---------- */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--ink);
+    color: #fff;
+}
+
+.brand {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.brand span {
+    color: #9cc9db;
+}
+
+.topbar-links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.topbar-links a {
+    color: #d8e6ec;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.topbar-links a:hover {
+    color: #fff;
+}
+
+.btn-ghost {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+    padding: 6px 12px;
+}
+
+/* ---------- channel header ---------- */
+.channel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding-bottom: 22px;
+    border-bottom: 2px solid var(--ink);
+}
+
+.channel-id {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.channel-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--line);
+}
+
+.eyebrow {
+    margin: 0;
+    font-family: var(--font-data);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+}
+
+.channel-head h1 {
+    margin: 2px 0 4px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+}
+
+.channel-meta {
+    margin: 0;
+    color: var(--muted);
+}
+
+.head-rate {
+    text-align: right;
+}
+
+.head-rate-num {
+    display: block;
+    font-family: var(--font-data);
+    font-weight: 600;
+    font-size: 2.4rem;
+    color: var(--ember);
+    line-height: 1;
+}
+
+.head-rate-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* ---------- summary cards ---------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 22px 0 10px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.card-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.card-num {
+    font-family: var(--font-data);
+    font-weight: 600;
+    font-size: 1.35rem;
+}
+
+.highlight-line {
+    margin: 6px 0 0;
+    color: var(--muted);
+}
+
+.tag {
+    font-family: var(--font-data);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-right: 8px;
+}
+
+/* ---------- charts ---------- */
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 14px;
+    margin: 26px 0;
+}
+
+.chart-card {
+    margin: 0;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.chart-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+}
+
+/* ---------- table ---------- */
+.table-wrap {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 6px 16px 16px;
+    overflow-x: auto;
+}
+
+.table-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0 4px;
+}
+
+.table-head h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.btn {
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 8px 14px;
+}
+
+.btn:hover {
+    background: #185a71;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: middle;
+}
+
+th {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--ink);
+}
+
+td.num,
+th.num {
+    text-align: right;
+    font-family: var(--font-data);
+    font-size: 0.85rem;
+}
+
+.thumb-cell img {
+    width: 72px;
+    border-radius: 4px;
+    display: block;
+}
+
+.title-cell a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.title-cell a:hover {
+    color: var(--accent);
+}
+
+tbody tr:hover {
+    background: #f0f5f6;
+}
+
+/* ---------- error + footer ---------- */
+.error-box {
+    text-align: center;
+    padding: 70px 0;
+}
+
+.error-box h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    padding: 18px;
+    border-top: 1px solid var(--line);
+}
+
+@media (max-width: 640px) {
+    .channel-head {
+        align-items: flex-start;
+    }
+
+    .head-rate {
+        text-align: left;
+    }
+}
