@@ -338,3 +338,54 @@ tbody tr:hover {
         text-align: left;
     }
 }
+
+.search {
+    max-width: 620px;
+    margin: 8vh auto 0;
+    text-align: center;
+}
+
+.search h1 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 10px 0 12px;
+}
+
+.search-lead {
+    color: var(--muted);
+    margin: 0 auto 28px;
+    max-width: 460px;
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--ink);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.search-form .btn {
+    border: none;
+    cursor: pointer;
+}
+
+.search-error {
+    margin-top: 16px;
+    color: var(--ember);
+    font-size: 0.9rem;
+}

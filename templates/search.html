@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}CampaignLens — analyze a channel{% endblock %}
+
+{% block content %}
+<section class="search">
+    <p class="eyebrow">CampaignLens</p>
+    <h1>Analyze a YouTube channel's engagement</h1>
+    <p class="search-lead">
+        Paste a channel link or handle to see its recent videos, engagement
+        rates, and performance charts.
+    </p>
+
+    <form class="search-form" action="{{ url_for('search.analyze') }}" method="post">
+        <input class="search-input" type="text" name="channel_url"
+               value="{{ channel_url or '' }}"
+               placeholder="https://www.youtube.com/@ChannelName" autofocus>
+        <button class="btn" type="submit">Analyze</button>
+    </form>
+
+    {% if error %}
+    <p class="search-error">{{ error }}</p>
+    {% endif %}
+</section>
+{% endblock %}
