@@ -1,1 +1,192 @@
 # engagement-analyzer
+
+# CampaignLens
+
+A YouTube Channel Performance Dashboard built with Flask. Paste a public
+YouTube channel link, choose how many recent videos to analyze, and
+CampaignLens retrieves the channel's public video data, calculates
+performance metrics, generates charts, and lets you download the dataset
+as a CSV.
+
+CampaignLens analyzes publicly visible YouTube performance only: views,
+likes, comments, visible engagement rate, publication date, video
+duration, and title characteristics. Shares, watch time, impressions,
+and click-through rate are not available through the public YouTube
+Data API and are not included.
+
+## Features
+
+- Analyze 10–50 recent public videos from any YouTube channel
+- Summary statistics: average/median views, likes, comments, engagement
+- Visible engagement rate, like rate, comment rate, and views per day
+- Three Matplotlib visualizations, regenerated on every analysis
+- Interactive dashboard: chart selector, table sorting, CSV download
+- Graceful handling of missing data, hidden likes, and invalid input
+
+## Screenshots
+
+<!-- TODO: add screenshots before submission -->
+<!-- 1. Search page (Abraham) -->
+<!-- 2. Results dashboard -->
+<!-- 3. Video table -->
+<!-- 4. Two charts -->
+
+## Technologies
+
+- Python 3.11+
+- Flask (web interface)
+- Pandas (data organization and analysis)
+- Matplotlib (visualization)
+- YouTube Data API v3 (data source)
+
+## Project structure
+
+```
+campaignlens/
+├── app.py                     # Flask application entry point (shared)
+├── requirements.txt
+├── .env.example               # template for API key configuration
+├── routes/
+│   ├── search_routes.py       # search page + /analyze (Abraham)
+│   └── results_routes.py      # /results dashboard + /download (Khushi)
+├── services/
+│   ├── channel_parser.py      # channel URL/handle parsing (Abraham)
+│   ├── youtube_api.py         # YouTube Data API client (Abraham)
+│   └── data_storage.py        # CSV export (Abraham)
+├── analysis/
+│   ├── metrics.py             # loading, cleaning, metrics (Khushi)
+│   └── charts.py              # Matplotlib chart generation (Khushi)
+├── data/
+│   └── videos.csv             # most recently collected dataset
+├── static/
+│   ├── css/                   # stylesheets
+│   └── charts/                # generated chart PNGs (not committed)
+├── templates/                 # Jinja2 HTML templates
+└── tests/
+    ├── generate_mock_data.py  # sample dataset generator (Khushi)
+    ├── test_analysis.py       # analysis tests (Khushi)
+    └── test_youtube_api.py    # API tests (Abraham)
+```
+
+## Installation
+
+```bash
+git clone https://github.com/kbhagra/engagement-analyzer.git
+cd engagement-analyzer
+pip install -r requirements.txt
+```
+
+## YouTube API setup
+
+<!-- TODO (Abraham): confirm these steps match your implementation -->
+
+1. Create a project in the [Google Cloud Console](https://console.cloud.google.com/).
+2. Enable the **YouTube Data API v3**.
+3. Create an API key under Credentials.
+4. Copy `.env.example` to `.env` and add your key:
+
+```
+YOUTUBE_API_KEY=your-key-here
+```
+
+The `.env` file is gitignored and must never be committed.
+
+## Running the application
+
+```bash
+python app.py
+```
+
+Open http://127.0.0.1:5000 in your browser. Enter a channel link such as
+`https://www.youtube.com/@Nike`, choose the number of videos, and click
+**Analyze Channel**. You are redirected to the results dashboard.
+
+To develop or demo the dashboard without an API key, generate sample
+data first:
+
+```bash
+python tests/generate_mock_data.py
+```
+
+then open http://127.0.0.1:5000/results directly.
+
+## Data collected
+
+For each video: title, description, publication date, duration, view
+count, like count, comment count, and thumbnail URL, together with the
+channel name, ID, and subscriber count. Data is organized into a Pandas
+DataFrame and stored locally as `data/videos.csv`.
+
+## Calculations
+
+All derived metrics are computed in `analysis/metrics.py`:
+
+- **Visible engagement rate** = (likes + comments) / views × 100
+- **Like rate** = likes / views × 100
+- **Comment rate** = comments / views × 100
+- **Views per day** = views / max(video age in days, 1)
+- **Title length** = number of characters in the title
+
+Design decisions:
+
+- Missing likes or comments (hidden by the uploader or disabled) are
+  kept as missing values, not converted to zero — a confirmed zero and
+  "not available" mean different things. The dashboard displays these
+  as "Not available".
+- Videos with zero views receive an undefined (missing) engagement
+  rate rather than 0%, since a rate with no denominator is undefined.
+- If likes are hidden but comments are visible, the engagement rate is
+  computed from comments alone and represents a lower bound.
+- The title-length vs engagement comparison uses Pearson correlation
+  and is reported as correlation, not causation.
+
+## Visualizations
+
+Generated by `analysis/charts.py` and regenerated on every analysis:
+
+1. **Top 10 videos by views** — horizontal bar chart
+2. **Views vs visible engagement rate** — scatter plot
+3. **Performance over time** — views per day by publication date,
+   which compares videos more fairly than raw views because older
+   videos have had more time to accumulate views
+
+A chart selector on the dashboard switches between individual charts
+or shows all three.
+
+## Error handling
+
+- Invalid channel links, unknown channels, API errors, and quota
+  errors show a clear error page <!-- TODO (Abraham): confirm -->
+- Missing or empty datasets show an error page instead of crashing
+- Unknown sort/chart URL parameters fall back to defaults
+- Missing statistics render as "Not available" throughout
+- Charts skip cleanly when a metric has no usable data
+
+## Team responsibilities
+
+| Area | Owner |
+|---|---|
+| Search page, channel parsing, YouTube API, CSV export | Abraham |
+| Results dashboard, metrics, charts, table, CSV download | Khushi |
+| Flask scaffolding, base template, README, integration | Shared |
+
+## Ethical considerations
+
+CampaignLens uses only publicly visible statistics from the official
+YouTube Data API, respects API quotas, and stores data locally on the
+user's machine. It does not collect private information, comments
+content, or viewer data, and does not attempt to infer information
+YouTube does not publish (such as shares or watch time).
+
+## Future improvements
+
+- Comment sentiment analysis
+- Multiple-channel comparison
+- Legacy `/user/username` URL support
+- Saved searches and analysis history
+- Online deployment
+
+## Authors
+
+- Khushi Bakshi — analysis, visualization, results dashboard
+- Abraham — data collection, YouTube API, search page
