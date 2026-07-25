@@ -178,14 +178,6 @@ user's machine. It does not collect private information, comments
 content, or viewer data, and does not attempt to infer information
 YouTube does not publish (such as shares or watch time).
 
-## Future improvements
-
-- Comment sentiment analysis
-- Multiple-channel comparison
-- Legacy `/user/username` URL support
-- Saved searches and analysis history
-- Online deployment
-
 ## Authors
 
 - Khushi Bakshi — analysis, visualization, results dashboard
