@@ -69,6 +69,25 @@
 </p>
 {% endif %}
 
+<!-- Dashboard controls: chart selector + table sort -->
+<form class="controls" method="get" action="{{ url_for('results.results') }}">
+    <label for="chart-select">Charts</label>
+    <select id="chart-select" name="chart">
+        {% for key, opt in chart_options.items() %}
+        <option value="{{ key }}" {% if key==current_chart %}selected{% endif %}>{{ opt[0] }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="sort-select">Sort table by</label>
+    <select id="sort-select" name="sort">
+        {% for key, opt in sort_options.items() %}
+        <option value="{{ key }}" {% if key==current_sort %}selected{% endif %}>{{ opt[0] }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit" class="btn">Apply</button>
+</form>
+
 <!-- Charts -->
 <section class="charts">
     {% if charts.top_videos %}
@@ -94,7 +113,7 @@
 <!-- Video table -->
 <section class="table-wrap">
     <div class="table-head">
-        <h2>Videos, ranked by views</h2>
+        <h2>Videos &middot; {{ sort_options[current_sort][0] | lower }}</h2>
         <a class="btn" href="{{ url_for('results.download') }}">Download CSV</a>
     </div>
     <table>

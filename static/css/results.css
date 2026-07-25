@@ -201,6 +201,47 @@ a {
     margin-right: 8px;
 }
 
+/* ---------- dashboard controls ---------- */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 22px 0 4px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+.controls label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+}
+
+.controls select {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 7px 10px;
+}
+
+.controls select:focus,
+.controls .btn:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.controls .btn {
+    border: none;
+    cursor: pointer;
+}
+
 /* ---------- charts ---------- */
 .charts {
     display: grid;
