@@ -5,10 +5,13 @@ Run with:
 Then open http://127.0.0.1:5000/
 """
 
+from dotenv import load_dotenv
 from flask import Flask
 
 from routes.results_routes import results_bp
 from routes.search_routes import search_bp
+
+load_dotenv()
 
 
 def create_app() -> Flask:

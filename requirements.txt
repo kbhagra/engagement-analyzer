@@ -3,3 +3,4 @@ pandas>=2.2
 numpy>=2.1
 matplotlib>=3.10
 requests>=2.32
+python-dotenv>=1.1
