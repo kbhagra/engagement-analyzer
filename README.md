@@ -1,4 +1,3 @@
-# engagement-analyzer
 # CampaignLens
 
 CampaignLens is a Python and Flask web application that uses the YouTube Data API v3 to collect, analyze, and visualize the performance of marketing and promotional videos.
