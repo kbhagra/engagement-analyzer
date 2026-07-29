@@ -374,9 +374,21 @@ tbody tr:hover {
     color: var(--ink);
 }
 
-.search-input:focus {
+.search-input:focus,
+.search-select:focus {
     outline: none;
     border-color: var(--accent);
+}
+
+.search-select {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer;
 }
 
 .search-form .btn {

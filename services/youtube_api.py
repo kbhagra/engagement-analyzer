@@ -14,10 +14,10 @@ class YouTubeAPIError(RuntimeError):
     pass
 
 
-def fetch_channel_videos(kind: str, identifier: str) -> list[dict]:
+def fetch_channel_videos(kind: str, identifier: str, max_videos: int = MAX_VIDEOS) -> list[dict]:
     key = _api_key()
     channel = _resolve_channel(kind, identifier, key)
-    video_ids = _recent_video_ids(channel["uploads_playlist"], key)
+    video_ids = _recent_video_ids(channel["uploads_playlist"], key, max_videos)
     if not video_ids:
         raise YouTubeAPIError("This channel has no public videos to analyze.")
     return [_video_row(channel, video) for video in _video_details(video_ids, key)]
@@ -59,13 +59,13 @@ def _resolve_channel(kind: str, identifier: str, key: str) -> dict:
     }
 
 
-def _recent_video_ids(playlist_id: str, key: str) -> list[str]:
+def _recent_video_ids(playlist_id: str, key: str, max_videos: int) -> list[str]:
     data = _get(
         "playlistItems",
         {
             "part": "contentDetails",
             "playlistId": playlist_id,
-            "maxResults": MAX_VIDEOS,
+            "maxResults": max_videos,
             "key": key,
         },
     )

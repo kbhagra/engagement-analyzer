@@ -17,12 +17,14 @@ def search():
 @search_bp.route("/analyze", methods=["POST"])
 def analyze():
     channel_url = request.form.get("channel_url", "")
+    max_videos = request.form.get("max_videos", "20")
     try:
         kind, identifier = parse_channel_url(channel_url)
-        rows = fetch_channel_videos(kind, identifier)
+        rows = fetch_channel_videos(kind, identifier, int(max_videos))
     except (ChannelParseError, YouTubeAPIError) as error:
         return render_template(
-            "search.html", error=str(error), channel_url=channel_url
+            "search.html", error=str(error),
+            channel_url=channel_url, max_videos=max_videos,
         ), 400
     save_videos(rows)
     return redirect(url_for("results.results"))
