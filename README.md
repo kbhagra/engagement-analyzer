@@ -294,7 +294,7 @@ The results should not be treated as proof that one video characteristic directl
 ## Authors
 
 * Khushi Bakshi
-* 
+* Abraham Alejandro Lopez Martin
 
 ## License
 
