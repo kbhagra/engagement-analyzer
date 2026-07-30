@@ -1,21 +1,99 @@
-channel_id,channel_name,channel_subscriber_count,video_id,video_url,title,title_length,description,published_at,video_age_days,duration,duration_seconds,view_count,like_count,comment_count,thumbnail_url
-UCmockchannel0001,Nike,2140000,mockvid0000,https://www.youtube.com/watch?v=mockvid0000,Just Do It: Behind the Campaign,31,Mock description for 'Just Do It: Behind the Campaign'.,2025-08-26T21:00:00Z,330,PT5M20S,320,112902,5315,153,https://i.ytimg.com/vi/mockvid0000/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0001,https://www.youtube.com/watch?v=mockvid0001,Air Max Day 2026 Recap,22,Mock description for 'Air Max Day 2026 Recap'.,2025-07-07T21:00:00Z,380,PT20M44S,1244,2846283,133870,6856,https://i.ytimg.com/vi/mockvid0001/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0002,https://www.youtube.com/watch?v=mockvid0002,How Pros Train | Episode 4,26,Mock description for 'How Pros Train | Episode 4'.,2025-12-15T23:00:00Z,219,PT21M7S,1267,132978,1952,174,https://i.ytimg.com/vi/mockvid0002/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0003,https://www.youtube.com/watch?v=mockvid0003,Unboxing the New Pegasus 42,27,Mock description for 'Unboxing the New Pegasus 42'.,2026-07-06T07:00:00Z,16,PT14M54S,894,841985,38563,2487,https://i.ytimg.com/vi/mockvid0003/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0004,https://www.youtube.com/watch?v=mockvid0004,5 Drills to Improve Your Sprint Speed,37,Mock description for '5 Drills to Improve Your Sprint Speed'.,2026-03-29T10:00:00Z,115,PT6M1S,361,2479559,,8783,https://i.ytimg.com/vi/mockvid0004/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0005,https://www.youtube.com/watch?v=mockvid0005,Marathon Prep: Week 1,21,Mock description for 'Marathon Prep: Week 1'.,2025-07-27T11:00:00Z,360,PT12M4S,724,1435114,34289,1799,https://i.ytimg.com/vi/mockvid0005/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0006,https://www.youtube.com/watch?v=mockvid0006,The Story of the Waffle Sole,28,Mock description for 'The Story of the Waffle Sole'.,2026-05-28T22:00:00Z,55,PT21M11S,1271,1601530,23760,5551,https://i.ytimg.com/vi/mockvid0006/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0007,https://www.youtube.com/watch?v=mockvid0007,Athlete Spotlight: Rising Stars,31,Mock description for 'Athlete Spotlight: Rising Stars'.,2026-03-06T23:00:00Z,138,PT13M30S,810,3068716,101179,,https://i.ytimg.com/vi/mockvid0007/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0008,https://www.youtube.com/watch?v=mockvid0008,Trail Running Essentials,24,Mock description for 'Trail Running Essentials'.,2026-06-09T07:00:00Z,43,PT12M55S,775,1237678,63703,3298,https://i.ytimg.com/vi/mockvid0008/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0009,https://www.youtube.com/watch?v=mockvid0009,Design Lab: Making a Jersey,27,Mock description for 'Design Lab: Making a Jersey'.,2025-09-27T18:00:00Z,298,PT10M27S,627,2963188,39937,8339,https://i.ytimg.com/vi/mockvid0009/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0010,https://www.youtube.com/watch?v=mockvid0010,Game Day Routine,16,Mock description for 'Game Day Routine'.,2026-06-09T17:00:00Z,43,PT13M2S,782,431630,12519,900,https://i.ytimg.com/vi/mockvid0010/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0011,https://www.youtube.com/watch?v=mockvid0011,Recovery Tips from the Pros,27,Mock description for 'Recovery Tips from the Pros'.,2026-04-27T13:00:00Z,0,PT23M54S,1434,0,0,0,https://i.ytimg.com/vi/mockvid0011/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0012,https://www.youtube.com/watch?v=mockvid0012,Sneaker Culture: A Short Documentary About the History and Future of Basketball Shoes,85,Mock description for 'Sneaker Culture: A Short Documentary About the History and Future of Basketball Shoes'.,2025-08-22T22:00:00Z,334,PT8M56S,536,2562880,106997,6072,https://i.ytimg.com/vi/mockvid0012/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0013,https://www.youtube.com/watch?v=mockvid0013,Behind the Scenes: World Cup Kit Launch,39,Mock description for 'Behind the Scenes: World Cup Kit Launch'.,2026-04-27T10:00:00Z,86,PT24M4S,1444,1599551,37585,5980,https://i.ytimg.com/vi/mockvid0013/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0014,https://www.youtube.com/watch?v=mockvid0014,Yoga for Runners,16,Mock description for 'Yoga for Runners'.,2025-10-07T17:00:00Z,288,PT2M29S,149,2879480,75483,9182,https://i.ytimg.com/vi/mockvid0014/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0015,https://www.youtube.com/watch?v=mockvid0015,Speed vs Endurance: What Matters More?,38,Mock description for 'Speed vs Endurance: What Matters More?'.,2026-03-24T23:00:00Z,120,PT7M47S,467,3384606,87230,4863,https://i.ytimg.com/vi/mockvid0015/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0016,https://www.youtube.com/watch?v=mockvid0016,City Runs: Tokyo,16,Mock description for 'City Runs: Tokyo'.,2025-10-02T02:00:00Z,293,PT22M31S,1351,1327854,27395,2984,https://i.ytimg.com/vi/mockvid0016/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0017,https://www.youtube.com/watch?v=mockvid0017,The Perfect Warm Up,19,Mock description for 'The Perfect Warm Up'.,2025-11-27T20:00:00Z,237,PT18M58S,1138,1118987,19002,3477,https://i.ytimg.com/vi/mockvid0017/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0018,https://www.youtube.com/watch?v=mockvid0018,Ask a Coach: Your Questions Answered,36,Mock description for 'Ask a Coach: Your Questions Answered'.,2026-03-07T01:00:00Z,137,PT12M56S,776,2459931,77295,6254,https://i.ytimg.com/vi/mockvid0018/hqdefault.jpg
-UCmockchannel0001,Nike,2140000,mockvid0019,https://www.youtube.com/watch?v=mockvid0019,Season Highlights 2025,22,Mock description for 'Season Highlights 2025'.,2026-03-29T20:00:00Z,115,PT4M19S,259,2145108,74383,6746,https://i.ytimg.com/vi/mockvid0019/hqdefault.jpg
+channel_id,channel_name,channel_subscriber_count,channel_thumbnail_url,video_id,video_url,title,title_length,description,published_at,video_age_days,duration,duration_seconds,view_count,like_count,comment_count,thumbnail_url
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,2MKduUYYsrU,https://www.youtube.com/watch?v=2MKduUYYsrU,"Your 2-year-old eating gelato in Italy, living his best life 🍦",62,,2026-07-23T11:31:01Z,6,PT12S,12,268772,11765,76,https://i.ytimg.com/vi/2MKduUYYsrU/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,roIt_XLSu2g,https://www.youtube.com/watch?v=roIt_XLSu2g,We Surprised River with a Disneyland Birthday!,46,"Thanks for watching! 
+
+Enjoy 15% off sitewide anytime with code: Alanna15
+This can be combined with the Anniversary Celebration promotion:
+ $15 Off $400 | $30 Off $800 | $50 Off $1200 | $75 Off $1600 | $100 Off $2000 | $130 Off $2400 (USD)
+Free Express Shipping | 30-Day Easy Return | Double G-Points
+
+Aile
+3-5mm Aurora Pearls Bracelet 14K Solid Gold
+https://bit.ly/4xVn1si
+
+Nuvole
+0.5CT Lab-Grown Diamond Necklace 14K Gold
+https://bit.ly/4eLsEQM
+
+Lustre Knot
+0.75CT Lab-Grown Diamond Bracelet 14K Gold
+https://bit.ly/4xQZx7t
+
+Sylin
+0.22CT Lab-Grown Diamond Ring 14K Gold
+https://bit.ly/3QkBwoA
+https://www.youtube.com/channel/UChUJbP5pivwW9wuJecKAADg/join",2026-07-16T11:18:13Z,13,PT14M41S,881,206021,3591,107,https://i.ytimg.com/vi/roIt_XLSu2g/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,euda_q7A-aA,https://www.youtube.com/watch?v=euda_q7A-aA,River Turns 2! 🎂 (Our Baby Isn't a Baby Anymore...),51,"Thanks for watching! If you’re ever injured in an accident, see if you have a case with Morgan & Morgan. You can start your claim in just a click without having to leave your couch: https://www.forthepeople.com/alannaandivor",2026-06-30T06:32:22Z,29,PT24M32S,1472,539794,10008,303,https://i.ytimg.com/vi/euda_q7A-aA/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,SJHoKLzLnRw,https://www.youtube.com/watch?v=SJHoKLzLnRw,Time flies 🥹,12,,2026-06-30T05:05:14Z,29,PT16S,16,983286,16958,69,https://i.ytimg.com/vi/SJHoKLzLnRw/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,U52HqjX1wJw,https://www.youtube.com/watch?v=U52HqjX1wJw,Detailed Kitchen tour live on YouTube 🤍,39,,2026-06-26T04:10:16Z,33,PT36S,36,171804,4157,33,https://i.ytimg.com/vi/U52HqjX1wJw/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,EZki75s_y1o,https://www.youtube.com/watch?v=EZki75s_y1o,Birthday morning surprise 🤍,27,"Shop car: 
+
+https://www.amazon.com/First-Ride-Hood-Mounted-Supercharger-Bluetooth/dp/B0GY3ZXVPD?maas=maas_adg_0B32E6E8401710C0FB6C9FC11F743ED1_afap_abs&ref_=aa_maas&tag=maas",2026-06-25T04:25:02Z,34,PT31S,31,383723,14313,168,https://i.ytimg.com/vi/EZki75s_y1o/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,E5TW6DF7xa8,https://www.youtube.com/watch?v=E5TW6DF7xa8,My Absolute Dream Kitchen (Full Detailed Tour),46,"Thanks for watching! If you’re ever injured in an accident, see if you have a case with Morgan & Morgan. You can start your claim in just a click without having to leave your couch: https://www.forthepeople.com/alannaandivor
+
+Join this channel to get access to perks:
+https://www.youtube.com/channel/UChUJbP5pivwW9wuJecKAADg/join
+
+Kitchen designed by: https://www.instagram.com/osayaarchitects?igsh=NTc4MTIwNjQ2YQ==",2026-06-24T06:27:59Z,35,PT31M30S,1890,612615,9257,496,https://i.ytimg.com/vi/E5TW6DF7xa8/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,EXUFzuSujYE,https://www.youtube.com/watch?v=EXUFzuSujYE,Happy Father’s Day to the best dad ever! ♥️,43,,2026-06-23T03:29:59Z,36,PT14S,14,372782,9801,50,https://i.ytimg.com/vi/EXUFzuSujYE/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,rlgMKoyBGeI,https://www.youtube.com/watch?v=rlgMKoyBGeI,Saturday pool days just hit different with @beatbotglobal ☀️,60,"This morning? Leaves everywhere and definitely not swim-ready. By afternoon, the pool was spotless and we didn’t lift a finger.
+
+The @beatbotglobal Sora 70 has completely changed our pool routine. It cleans the surface, shelves, waterline, walls, and floor, while its dual-jet technology pulls in floating leaves and debris. 
+
+Less time cleaning, more time making memories with this little guy!
+
+Use code ALANNABB for 3% off on the official website. 🔗 in bio.
+
+AMZ Link: https://bit.ly/4uCxZ2LDTC Link: https://bit.ly/4aVfxvc
+
+#Beatbot #Sora70 #AIPoolCleaner",2026-06-23T01:42:14Z,36,PT52S,52,404927,9401,28,https://i.ytimg.com/vi/rlgMKoyBGeI/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,fR8KuhP6sIc,https://www.youtube.com/watch?v=fR8KuhP6sIc,Cleaning the house with The MOVA MOBIUS 60!,43,"Having a toddler means the house is clean for about 3 minutes! The MOVA MOBIUS 60 has been a lifesaver for keeping up with crumbs, sticky spills, pet hair, and everyday messes. It automatically adjusts its cleaning for each room, handles our hardwood floors with care, and even cleans itself when it’s done.
+
+Prime Day is almost here! Get ready for up to 40% OFF selected MOVA robot vacuums. @MOVAUSOfficial 
+
+Buy on Amazon: https://amzn.to/4uBw6mZ
+
+Buy on their Website: https://bit.ly/4vXWQiM
+
+#MOVAPrimeDay2026 #Ad #MOVA #MOVAMOBIUS60 #MOVARobotVacuum #MOVATech",2026-06-18T04:18:49Z,41,PT48S,48,405441,7799,18,https://i.ytimg.com/vi/fR8KuhP6sIc/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,HjcyaU0LMyk,https://www.youtube.com/watch?v=HjcyaU0LMyk,A day out in HOLLYWOOD with the family!,39,"Thanks for watching! 👉 Download Cash Giraffe now using my link https://t2m.io/Alanna_Ivor and get up to 3,999 gems to kickstart your journey. Play your favorite games and earn rewards 🏆
+
+
+Join this channel to get access to perks:
+https://www.youtube.com/channel/UChUJbP5pivwW9wuJecKAADg/join",2026-06-17T03:56:26Z,42,PT14M10S,850,126060,2678,105,https://i.ytimg.com/vi/HjcyaU0LMyk/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,EjVq_gC_W2Y,https://www.youtube.com/watch?v=EjVq_gC_W2Y,Chef River has officially been promoted from his play kitchen to the adult kitchen🧑🏻‍🍳,86,,2026-06-10T04:28:04Z,49,PT32S,32,2786674,71286,338,https://i.ytimg.com/vi/EjVq_gC_W2Y/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,VM9e8Yp0KBc,https://www.youtube.com/watch?v=VM9e8Yp0KBc,River goes to his First BIRTHDAY PARTY vlog,43,"Thanks for watching! [Giveaway] Enter for your chance to win a LG QNED TV and a 3 months-free LG Gallery+ subscription voucher.
+
+Simply follow the two steps below to enter! #LGGallery+ #LGGalleryPlus
+
+ 
+
+📌How to enter:
+
+👉Tell us in the comments which art you want to display at home with LG Gallery+ and why. Don’t forget to include the keyword “LG Gallery+” in your comment.
+
+Choose from the options here: A. Classic Art / B. Modern Contemporary Art / C. Photography / D. Gaming Art / E. Film / F. Sports / G. Nature & Scenery
+
+👉Fill out the Form and submit: https://bit.ly/4dXewUh
+
+ 
+
+Learn more about LG Gallery+ here: https://bit.ly/4dLkuIY
+
+*Please make sure to review the Terms and Conditions / Privacy Policy linked in the Form.",2026-06-04T03:49:30Z,55,PT19M2S,1142,237751,5577,242,https://i.ytimg.com/vi/VM9e8Yp0KBc/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,e6sJPn-DYUY,https://www.youtube.com/watch?v=e6sJPn-DYUY,POV: You turn your VIRAL video into a song using #Speechtosong on YouTube Shorts! #YouTubePartner,97,Go try YouTube Shorts' new Speech to song feature!,2026-06-03T03:01:16Z,56,PT19S,19,578048,8283,23,https://i.ytimg.com/vi/e6sJPn-DYUY/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,tNIW-pqfQ7A,https://www.youtube.com/watch?v=tNIW-pqfQ7A,River and I Planned Alanna's Entire Mother's Day (from scratch),63,"Thanks for watching! If you’re ever injured in an accident, see if you have a case with Morgan & Morgan. You can start your claim in just a click without having to leave your couch: https://www.forthepeople.com/alannaandivor
+
+Join this channel to get access to perks:
+https://www.youtube.com/channel/UChUJbP5pivwW9wuJecKAADg/join",2026-05-21T04:29:54Z,69,PT17M16S,1036,504200,9683,247,https://i.ytimg.com/vi/tNIW-pqfQ7A/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,nI2QAK5f6Lg,https://www.youtube.com/watch?v=nI2QAK5f6Lg,Lucky to be your mom 👼🏻,23,,2026-05-11T04:46:08Z,79,PT13S,13,1499351,35476,88,https://i.ytimg.com/vi/nI2QAK5f6Lg/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,toy0Tdrk3Ok,https://www.youtube.com/watch?v=toy0Tdrk3Ok,Furniture Shopping for the new house!,37,"Thanks for watching! Use our code for 10% off your next SeatGeek order*: https://seatgeek.onelink.me/RrnK/ALANNAIVOR Sponsored by SeatGeek. *Restrictions apply. Max $20 discount
+
+
+
+
+Join this channel to get access to perks:
+https://www.youtube.com/channel/UChUJbP5pivwW9wuJecKAADg/join",2026-05-04T07:37:34Z,86,PT15M53S,953,247686,3895,111,https://i.ytimg.com/vi/toy0Tdrk3Ok/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,IkyuQPaEkxA,https://www.youtube.com/watch?v=IkyuQPaEkxA,Seeing if my toddler shares with me 🥹🧁,38,,2026-05-01T02:47:11Z,89,PT43S,43,2418868,66587,213,https://i.ytimg.com/vi/IkyuQPaEkxA/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,e4WTeC_TT4M,https://www.youtube.com/watch?v=e4WTeC_TT4M,My FATHER comes to visit his GRANDSON! + New House updates!,59,Thanks for watching! Use code 50ALANNAIVOR to get $50 off plus free shipping on your first order at https://bit.ly/4sKl1Qk!,2026-04-28T05:19:35Z,92,PT23M20S,1400,364985,6212,200,https://i.ytimg.com/vi/e4WTeC_TT4M/hqdefault.jpg
+UChUJbP5pivwW9wuJecKAADg,Alanna & Ivor,1950000,https://yt3.ggpht.com/xHZZQIKM3rLRrBkZlOtpjoboVqLcx39Sb0UYWcsOwKkv81zac6FzDGI5TqP4wtGGBFr85ISR1P0=s88-c-k-c0x00ffffff-no-rj,sEbBUCFWHRI,https://www.youtube.com/watch?v=sEbBUCFWHRI,My toddler rates my Coachella outfits 🥲,39,,2026-04-24T04:43:34Z,96,PT1M9S,69,1394008,32872,115,https://i.ytimg.com/vi/sEbBUCFWHRI/hqdefault.jpg

@@ -70,21 +70,40 @@
 {% endif %}
 
 <!-- Charts -->
+<div class="charts-section-header">
+    <h2>Visual Insights</h2>
+    <div class="chart-filter-wrap">
+        <label for="chart-filter" class="chart-select-label">Chart View:</label>
+        <select id="chart-filter" class="chart-select">
+            <option value="all">All Charts</option>
+            {% if charts.top_videos %}
+            <option value="top_videos">Top Videos by Views</option>
+            {% endif %}
+            {% if charts.views_vs_engagement %}
+            <option value="views_vs_engagement">Views vs. Engagement</option>
+            {% endif %}
+            {% if charts.over_time %}
+            <option value="over_time">Performance Over Time</option>
+            {% endif %}
+        </select>
+    </div>
+</div>
+
 <section class="charts">
     {% if charts.top_videos %}
-    <figure class="chart-card">
+    <figure class="chart-card" data-chart-type="top_videos">
         <img src="{{ url_for('static', filename='charts/' ~ charts.top_videos) }}"
             alt="Bar chart of the channel's top videos by views">
     </figure>
     {% endif %}
     {% if charts.views_vs_engagement %}
-    <figure class="chart-card">
+    <figure class="chart-card" data-chart-type="views_vs_engagement">
         <img src="{{ url_for('static', filename='charts/' ~ charts.views_vs_engagement) }}"
             alt="Scatter plot of views versus visible engagement rate">
     </figure>
     {% endif %}
     {% if charts.over_time %}
-    <figure class="chart-card">
+    <figure class="chart-card" data-chart-type="over_time">
         <img src="{{ url_for('static', filename='charts/' ~ charts.over_time) }}"
             alt="Scatter plot of views per day by publication date">
     </figure>
@@ -94,9 +113,27 @@
 <!-- Video table -->
 <section class="table-wrap">
     <div class="table-head">
-        <h2>Videos, ranked by views</h2>
+        <h2>Video Performance Table</h2>
         <a class="btn" href="{{ url_for('results.download') }}">Download CSV</a>
     </div>
+    
+    <div class="table-toolbar">
+        <div class="table-search-wrap">
+            <input type="text" id="table-search" class="table-search-input" placeholder="🔍 Search video titles...">
+        </div>
+        <div class="table-sort-wrap">
+            <label for="table-sort" class="table-sort-label">Sort by:</label>
+            <select id="table-sort" class="table-sort-select">
+                <option value="views-desc">Views (High to Low)</option>
+                <option value="views-asc">Views (Low to High)</option>
+                <option value="likes-desc">Likes (High to Low)</option>
+                <option value="comments-desc">Comments (High to Low)</option>
+                <option value="engagement-desc">Engagement Rate (High to Low)</option>
+                <option value="viewsday-desc">Views / Day (High to Low)</option>
+            </select>
+        </div>
+    </div>
+
     <table>
         <thead>
             <tr>
@@ -112,7 +149,12 @@
         </thead>
         <tbody>
             {% for r in rows %}
-            <tr>
+            <tr data-title="{{ r.title|lower }}"
+                data-views="{{ r.view_count if r.view_count is not none else -1 }}"
+                data-likes="{{ r.like_count if r.like_count is not none else -1 }}"
+                data-comments="{{ r.comment_count if r.comment_count is not none else -1 }}"
+                data-engagement="{{ r.visible_engagement_rate if r.visible_engagement_rate is not none else -1 }}"
+                data-viewsday="{{ r.views_per_day if r.views_per_day is not none else -1 }}">
                 <td class="thumb-cell">
                     {% if r.thumbnail_url %}<img src="{{ r.thumbnail_url }}" alt="" loading="lazy">{% endif %}
                 </td>
@@ -135,5 +177,69 @@
         </tbody>
     </table>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Chart filter logic
+        const filterSelect = document.getElementById('chart-filter');
+        if (filterSelect) {
+            const chartCards = document.querySelectorAll('.chart-card');
+            filterSelect.addEventListener('change', function () {
+                const selectedVal = this.value;
+                chartCards.forEach(function (card) {
+                    const cardType = card.getAttribute('data-chart-type');
+                    if (selectedVal === 'all' || cardType === selectedVal) {
+                        card.style.display = 'block';
+                        card.classList.remove('animate-fade');
+                        void card.offsetWidth;
+                        card.classList.add('animate-fade');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('animate-fade');
+                    }
+                });
+            });
+        }
+
+        // Table live search & dynamic sorting logic
+        const tableSearch = document.getElementById('table-search');
+        const tableSort = document.getElementById('table-sort');
+        const tbody = document.querySelector('.table-wrap tbody');
+
+        if (tableSearch && tableSort && tbody) {
+            function filterAndSortTable() {
+                const query = tableSearch.value.toLowerCase().trim();
+                const sortVal = tableSort.value;
+                const rows = Array.from(tbody.querySelectorAll('tr'));
+
+                rows.forEach(function (row) {
+                    const title = row.getAttribute('data-title') || '';
+                    if (!query || title.includes(query)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+
+                const parts = sortVal.split('-');
+                const attr = parts[0];
+                const order = parts[1];
+
+                rows.sort(function (a, b) {
+                    const valA = parseFloat(a.getAttribute('data-' + attr)) || 0;
+                    const valB = parseFloat(b.getAttribute('data-' + attr)) || 0;
+                    return order === 'desc' ? valB - valA : valA - valB;
+                });
+
+                rows.forEach(function (row) {
+                    tbody.appendChild(row);
+                });
+            }
+
+            tableSearch.addEventListener('input', filterAndSortTable);
+            tableSort.addEventListener('change', filterAndSortTable);
+        }
+    });
+</script>
 
 {% endblock %}

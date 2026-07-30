@@ -4,6 +4,7 @@ import os
 import re
 from datetime import datetime, timezone
 
+from dotenv import load_dotenv
 import requests
 
 API_BASE = "https://www.googleapis.com/youtube/v3"
@@ -24,6 +25,7 @@ def fetch_channel_videos(kind: str, identifier: str, max_videos: int = MAX_VIDEO
 
 
 def _api_key() -> str:
+    load_dotenv(override=True)
     key = os.environ.get("YOUTUBE_API_KEY")
     if not key:
         raise YouTubeAPIError(
@@ -35,9 +37,14 @@ def _api_key() -> str:
 def _get(endpoint: str, params: dict) -> dict:
     response = requests.get(f"{API_BASE}/{endpoint}", params=params, timeout=15)
     if response.status_code != 200:
-        raise YouTubeAPIError(
-            "The YouTube API request failed. Check your API key and quota."
-        )
+        msg = "The YouTube API request failed. Check your API key and quota."
+        try:
+            err_data = response.json().get("error", {})
+            if "message" in err_data:
+                msg = f"YouTube API Error ({response.status_code}): {err_data['message']}"
+        except Exception:
+            pass
+        raise YouTubeAPIError(msg)
     return response.json()
 
 

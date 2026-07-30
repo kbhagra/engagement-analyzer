@@ -11,7 +11,7 @@ from flask import Flask
 from routes.results_routes import results_bp
 from routes.search_routes import search_bp
 
-load_dotenv()
+load_dotenv(override=True)
 
 
 def create_app() -> Flask:
