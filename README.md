@@ -23,13 +23,39 @@ and are not included.
 - Interactive dashboard: chart selector, table sorting, CSV download
 - Graceful handling of missing data, hidden likes, and invalid input
 
-## Screenshots
+## Interface & Screenshots
 
-<!-- Replace these with real screenshots in a screenshots/ folder -->
-<!-- ![Search page](screenshots/search.png) -->
-<!-- ![Results dashboard](screenshots/dashboard.png) -->
-<!-- ![Video table](screenshots/table.png) -->
-<!-- ![Charts](screenshots/charts.png) -->
+### 1. Search Page
+![Search Page](screenshots/search.png)
+
+*The home search interface allows users to enter a YouTube channel handle/link (e.g. `https://www.youtube.com/@kyliejenner`) and select the sample size of recent videos to analyze.*
+
+### 2. Channel Dashboard Overview
+![Channel Dashboard Overview](screenshots/dashboard.png)
+
+*Comprehensive channel report header showing key performance metrics (total views, average views, median views, average comments, engagement rate) and high-level visual insight summaries.*
+
+### 3. Video Performance Table
+![Video Performance Table](screenshots/table.png)
+
+*Interactive video data table featuring real-time title filtering, multi-metric sorting (views, likes, comments, engagement rate, views/day), thumbnail previews, and instant CSV export.*
+
+### 4. Performance Visualizations
+
+#### Top 10 Videos by Views
+![Top 10 Videos by Views Chart](screenshots/chart-top-videos.png)
+
+*Horizontal bar chart showing the highest performing videos ordered by view count.*
+
+#### Performance Over Time (Views per Day)
+![Performance Over Time Chart](screenshots/chart-performance-over-time.png)
+
+*Scatter plot illustrating publication date versus views generated per day.*
+
+#### Views vs. Visible Engagement Rate
+![Views vs Engagement Chart](screenshots/chart-views-vs-engagement.png)
+
+*Scatter plot illustrating the relationship between view counts and engagement rates across recent videos.*
 
 ## Technologies
 
@@ -41,7 +67,7 @@ and are not included.
 
 ## Project structure
 
-```
+```text
 engagement-analyzer/
 ├── app.py                     # Flask application entry point (shared)
 ├── requirements.txt
@@ -57,6 +83,13 @@ engagement-analyzer/
 │   └── charts.py              # Matplotlib chart generation (Khushi)
 ├── data/
 │   └── videos.csv             # most recently collected dataset
+├── screenshots/               # application UI screenshots
+│   ├── search.png
+│   ├── dashboard.png
+│   ├── table.png
+│   ├── chart-top-videos.png
+│   ├── chart-performance-over-time.png
+│   └── chart-views-vs-engagement.png
 ├── static/
 │   ├── css/                   # stylesheets
 │   └── charts/                # generated chart PNGs (not committed)
