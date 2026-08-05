@@ -1,301 +1,205 @@
 # CampaignLens
 
-CampaignLens is a Python and Flask web application that uses the YouTube Data API v3 to collect, analyze, and visualize the performance of marketing and promotional videos.
+CampaignLens is a Python and Flask web application that analyzes the
+performance of a YouTube channel's recent videos. The user enters a
+public YouTube channel link, chooses how many recent videos to analyze,
+and CampaignLens retrieves the channel's public video data through the
+YouTube Data API v3, organizes it into a CSV, calculates performance
+metrics, and displays the results on an interactive dashboard.
 
-Users can search for a brand, company, product, or advertising campaign. CampaignLens retrieves related YouTube videos and analyzes metrics such as views, likes, comments, engagement rate, publication date, and title length. The results are displayed through summary statistics, tables, and visualizations.
+CampaignLens analyzes publicly visible YouTube performance only: views,
+likes, comments, visible engagement rate, publication date, video
+duration, and title characteristics. Shares, watch time, impressions,
+and click-through rate are not exposed by the public YouTube Data API
+and are not included.
 
 ## Features
 
-* Search for promotional videos using a brand or campaign keyword
-* Retrieve public video data from the YouTube Data API
-* Collect video titles, channels, publication dates, views, likes, and comments
-* Save collected data in a CSV file
-* Calculate engagement rates and other performance statistics
-* Compare the performance of different videos
-* Generate charts using Matplotlib
-* Display results through a Flask web interface
-* Download or review the collected dataset
+- Analyze 10–50 recent public videos from any YouTube channel
+- Accepts `@handle` links, channel-ID links, or a bare handle
+- Summary statistics: average and median views, likes, comments
+- Visible engagement rate, like rate, comment rate, and views per day
+- Three Matplotlib visualizations, regenerated on every analysis
+- Interactive dashboard: chart selector, table sorting, CSV download
+- Graceful handling of missing data, hidden likes, and invalid input
 
-## Technologies Used
+## Screenshots
 
-* Python
-* Flask
-* YouTube Data API v3
-* Pandas
-* NumPy
-* Matplotlib
-* HTML
-* CSS
-* CSV
+<!-- Replace these with real screenshots in a screenshots/ folder -->
+<!-- ![Search page](screenshots/search.png) -->
+<!-- ![Results dashboard](screenshots/dashboard.png) -->
+<!-- ![Video table](screenshots/table.png) -->
+<!-- ![Charts](screenshots/charts.png) -->
 
-## Project Structure
+## Technologies
 
-```text
-campaignlens/
-│
-├── app.py
-├── youtube_api.py
-├── analysis.py
+- Python 3.11+
+- Flask (web interface)
+- Pandas / NumPy (data organization and analysis)
+- Matplotlib (visualization)
+- YouTube Data API v3 (data source)
+
+## Project structure
+
+```
+engagement-analyzer/
+├── app.py                     # Flask application entry point (shared)
 ├── requirements.txt
-├── README.md
-│
+├── routes/
+│   ├── search_routes.py       # search page + /analyze (Abraham)
+│   └── results_routes.py      # /results dashboard + /download (Khushi)
+├── services/
+│   ├── channel_parser.py      # channel URL/handle parsing (Abraham)
+│   ├── youtube_api.py         # YouTube Data API client (Abraham)
+│   └── data_storage.py        # CSV export (Abraham)
+├── analysis/
+│   ├── metrics.py             # loading, cleaning, metrics (Khushi)
+│   └── charts.py              # Matplotlib chart generation (Khushi)
 ├── data/
-│   └── videos.csv
-│
+│   └── videos.csv             # most recently collected dataset
 ├── static/
-│   ├── style.css
-│   └── charts/
-│
-└── templates/
-    ├── index.html
-    └── results.html
+│   ├── css/                   # stylesheets
+│   └── charts/                # generated chart PNGs (not committed)
+├── templates/                 # Jinja2 HTML templates
+└── tests/
+    ├── generate_mock_data.py  # sample dataset generator (Khushi)
+    ├── test_analysis.py       # analysis tests (Khushi)
+    └── test_channel_parser.py # channel parsing tests (Abraham)
 ```
-
-## How It Works
-
-1. The user enters a brand or campaign keyword.
-2. The application sends a request to the YouTube Data API.
-3. The API returns related videos and their public statistics.
-4. The collected information is cleaned and saved in a CSV file.
-5. Python analyzes the video performance data.
-6. Matplotlib generates charts based on the selected metrics.
-7. Flask displays the results in the web interface.
-
-## Data Collected
-
-CampaignLens may collect the following information for each video:
-
-* Video title
-* Video ID
-* Channel name
-* Publication date
-* View count
-* Like count
-* Comment count
-* Video duration
-* Thumbnail URL
-* Video description
-* Title length
-
-## Data Analysis
-
-The application calculates and compares several performance measurements, including:
-
-* Average views
-* Average likes
-* Average comments
-* Engagement rate
-* Most-viewed videos
-* Most-engaging videos
-* Title length versus engagement
-* Publication date versus performance
-
-The engagement rate is calculated as:
-
-```text
-Engagement Rate = ((Likes + Comments) / Views) × 100
-```
-
-Videos with zero views are handled separately to prevent division errors.
-
-## Visualizations
-
-CampaignLens can generate visualizations such as:
-
-* Views by video
-* Likes by video
-* Comments by video
-* Engagement rate by video
-* Likes versus views
-* Title length versus engagement rate
-* Video performance by publication date
 
 ## Installation
 
-### 1. Clone the repository
-
 ```bash
-git clone https://github.com/YOUR-USERNAME/campaignlens.git
-cd campaignlens
-```
-
-### 2. Create a virtual environment
-
-```bash
+git clone https://github.com/kbhagra/engagement-analyzer.git
+cd engagement-analyzer
 python -m venv venv
-```
-
-Activate the virtual environment on macOS or Linux:
-
-```bash
-source venv/bin/activate
-```
-
-Activate it on Windows:
-
-```bash
-venv\Scripts\activate
-```
-
-### 3. Install the required packages
-
-```bash
+source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-A sample `requirements.txt` file may include:
+## YouTube API setup
 
-```text
-Flask
-google-api-python-client
-pandas
-numpy
-matplotlib
-python-dotenv
-isodate
+1. Open the [Google Cloud Console](https://console.cloud.google.com/)
+   and create a project.
+2. Enable the **YouTube Data API v3**.
+3. Create an API key under Credentials.
+4. Create a file named `.env` in the project root:
+
 ```
-
-## YouTube API Setup
-
-1. Open the Google Cloud Console.
-2. Create a new Google Cloud project.
-3. Enable the YouTube Data API v3.
-4. Create an API key.
-5. Create a file named `.env` in the main project folder.
-6. Add your API key:
-
-```text
 YOUTUBE_API_KEY=your_api_key_here
 ```
 
-Do not upload your `.env` file or API key to GitHub.
+The `.env` file is listed in `.gitignore` and must never be committed.
 
-Add the following line to `.gitignore`:
-
-```text
-.env
-```
-
-## Running the Application
-
-From the main project directory, run:
+## Running the application
 
 ```bash
 python app.py
 ```
 
-Then open the local address shown in the terminal, usually:
+Open the address shown in the terminal (usually http://127.0.0.1:5000;
+on macOS, if port 5000 is taken by AirPlay Receiver, run on another
+port). Enter a channel link such as `https://www.youtube.com/@Nike`,
+choose the number of videos, and click **Analyze Channel**. You are
+redirected to the results dashboard.
 
-```text
-http://127.0.0.1:5000
+To develop or demo the dashboard without an API key, generate sample
+data first:
+
+```bash
+python tests/generate_mock_data.py
 ```
 
-## Using CampaignLens
+then open the `/results` page directly.
 
-1. Enter a keyword such as:
+## Data collected
 
-```text
-Nike commercial
-Apple advertisement
-Sephora campaign
-```
+For each video: title, description, publication date, duration, view
+count, like count, comment count, and thumbnail URL, together with the
+channel name, ID, and subscriber count. Data is organized into a Pandas
+DataFrame and stored locally as `data/videos.csv`.
 
-2. Select the number of videos to retrieve.
-3. Select a sorting or analysis option.
-4. Click the search or analyze button.
-5. Review the video data and summary statistics.
-6. View the generated charts.
-7. Download the collected data if the option is available.
+## Calculations
 
-## Interface
+All derived metrics are computed in `analysis/metrics.py`:
 
-The application contains at least two main pages:
+- **Visible engagement rate** = (likes + comments) / views × 100
+- **Like rate** = likes / views × 100
+- **Comment rate** = comments / views × 100
+- **Views per day** = views / max(video age in days, 1)
+- **Title length** = number of characters in the title
 
-### Search Page
+Design decisions:
 
-The search page allows users to:
+- Missing likes or comments (hidden by the uploader or disabled) are
+  kept as missing values, not converted to zero — a confirmed zero and
+  "not available" mean different things. The dashboard displays these
+  as "Not available" and excludes them from averages.
+- Videos with zero views receive an undefined (missing) engagement
+  rate rather than 0%, since a rate with no denominator is undefined.
+- If likes are hidden but comments are visible, the engagement rate is
+  computed from comments alone and represents a lower bound.
+- The title-length vs engagement comparison uses Pearson correlation
+  and is reported as correlation, not causation.
 
-* Enter a campaign or brand keyword
-* Choose the number of results
-* Select a sorting option
-* Start the search
+## Visualizations
 
-### Results Page
+Generated by `analysis/charts.py` and regenerated on every analysis:
 
-The results page displays:
+1. **Top 10 videos by views** — horizontal bar chart
+2. **Views vs visible engagement rate** — scatter plot
+3. **Performance over time** — views per day by publication date,
+   which compares videos more fairly than raw views because older
+   videos have had more time to accumulate views
 
-* Video statistics
-* Summary information
-* A table of collected data
-* Metric-selection options
-* Generated visualizations
-* A CSV download option
+A chart selector on the dashboard switches between individual charts
+or shows all three, and a sort control reorders the video table by
+newest, most viewed, most liked, or most engaging.
 
-## Team Responsibilities
+## Error handling
 
-### Partner 1: Data Collection and Organization
+- Invalid channel links, video links pasted by mistake, and legacy
+  `/user/` URLs produce clear, user-facing error messages
+- Unknown channels, API errors, and quota errors show an error page
+- Missing or empty datasets show an error page instead of crashing
+- Unknown sort/chart URL parameters fall back to defaults
+- Missing statistics render as "Not available" throughout
+- Charts skip cleanly when a metric has no usable data
 
-* Set up the YouTube Data API
-* Retrieve video data
-* Clean and organize the results
-* Save data into CSV or JSON format
-* Build the search page
+## Team responsibilities
 
-### Partner 2: Analysis and Visualization
+| Area | Owner |
+|---|---|
+| Search page, channel URL parsing, YouTube API client, CSV export | Abraham Alejandro Lopez Martin |
+| Results dashboard, metrics, charts, video table, CSV download | Khushi Bakshi |
+| Flask scaffolding, integration, testing, documentation | Shared |
 
-* Load the collected data
-* Calculate performance statistics
-* Calculate engagement rates
-* Generate Matplotlib charts
-* Build the results page
+## Ethical considerations
 
-### Shared Responsibilities
+CampaignLens uses only publicly visible statistics from the official
+YouTube Data API, respects API quotas, and stores data locally on the
+user's machine. It does not collect private information, comment
+content, or viewer data, and does not attempt to infer information
+YouTube does not publish (such as shares or watch time).
 
-* Connect the Flask pages
-* Test the application
-* Handle errors and missing data
-* Write documentation
-* Prepare the final presentation
+Results should not be treated as proof that one video characteristic
+causes better performance. Engagement is influenced by many factors,
+including audience size, budget, brand popularity, and upload timing.
 
-## Error Handling
+## Future improvements
 
-The application should handle situations such as:
-
-* Missing or invalid API keys
-* Empty search terms
-* No videos found
-* Missing likes or comments
-* API quota errors
-* Internet connection problems
-* Videos with zero views
-* Missing CSV files
-
-## Future Improvements
-
-Possible future updates include:
-
-* Comparing multiple brands at once
-* Adding interactive Plotly charts
-* Supporting date-range filters
-* Adding sentiment analysis for video comments
-* Analyzing video descriptions and keywords
-* Adding thumbnail image analysis
-* Supporting additional platforms
-* Adding machine-learning performance predictions
-* Allowing users to save previous searches
-* Deploying the application online
-
-## Ethical Considerations
-
-CampaignLens only uses publicly available YouTube information provided through the official YouTube Data API. The application does not collect private user information or attempt to access private advertising accounts.
-
-The results should not be treated as proof that one video characteristic directly causes better performance. Engagement can be influenced by many factors, including audience size, advertising budget, brand popularity, upload timing, and external promotion.
+- Comment sentiment analysis
+- Multiple-channel comparison
+- Legacy `/user/username` URL support
+- Date-range filters and saved analysis history
+- Interactive charts and online deployment
 
 ## Authors
 
-* Khushi Bakshi
-* Abraham Alejandro Lopez Martin
+- Khushi Bakshi — analysis, visualization, results dashboard
+- Abraham Alejandro Lopez Martin — data collection, YouTube API, search page
 
 ## License
 
-This project was created for educational purposes as part of the CS 122 final project.
+MIT License. This project was created for educational purposes as part
+of the CS 122 final project at San José State University.
